@@ -10,8 +10,8 @@ fun calculateCommission(cardType: String = "VK Pay", amount: Int = 100, previous
             else ERROR_LIMIT
 
         "MasterCard", "Maestro" ->
-            if (previous <= 75000) 0
-            else if (amount <= 150_000 && amount + previous <= 600_000) max(20, (amount * 0.006).toInt() + 20)
+            if (amount + previous <= 75_000) 0
+            else if (amount <= 150_000 && amount + previous <= 600_000) (amount * 0.006).toInt() + 20
             else ERROR_LIMIT
 
         "VK Pay" ->
