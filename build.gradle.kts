@@ -1,5 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "1.9.22"
+    jacoco
     application
 }
 
@@ -11,11 +12,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
-}
-
-tasks.test {
-    useJUnitPlatform()
+    implementation(kotlin ("test"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    testImplementation("junit:junit:4.13.2")
 }
 
 kotlin {
